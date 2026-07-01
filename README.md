@@ -56,6 +56,41 @@ Located in `.claude/skills/`. Each one reads the existing codebase patterns befo
 
 Generates: a Drizzle table scoped to `organizationId`, server actions (create/update/delete/list) with Zod validation, a dashboard page with a table + form, and a sidebar entry — wired together end to end.
 
+This is the actual, unedited output from that exact prompt — the schema and one of the four server actions it generated:
+
+```ts
+// src/db/schema/invoices.ts
+export const invoices = pgTable("invoices", {
+  id: text("id").primaryKey(),
+  amount: integer("amount").notNull(),
+  status: text("status", { enum: ["draft", "sent", "paid"] })
+    .notNull()
+    .default("draft"),
+  dueDate: timestamp("due_date").notNull(),
+  organizationId: text("organization_id")
+    .notNull()
+    .references(() => organizations.id, { onDelete: "cascade" }),
+  createdAt: timestamp("created_at").notNull().defaultNow(),
+  updatedAt: timestamp("updated_at").notNull().defaultNow(),
+});
+```
+
+```ts
+// src/app/(dashboard)/dashboard/invoices/actions.ts
+export async function createInvoice(input: z.infer<typeof invoiceInputSchema>) {
+  const organization = await requireOrganization();
+  const data = invoiceInputSchema.parse(input);
+
+  await db.insert(invoices).values({
+    id: createId(),
+    organizationId: organization.id,
+    ...data,
+  });
+}
+```
+
+The table, actions, dashboard page, table/form UI, and sidebar entry it produced are live in this repo: [`src/db/schema/invoices.ts`](./src/db/schema/invoices.ts), [`src/app/(dashboard)/dashboard/invoices/`](./src/app/(dashboard)/dashboard/invoices/), [`src/components/invoices/`](./src/components/invoices/).
+
 ### `add-dashboard-page`
 
 > "Add an Analytics page to the dashboard."
