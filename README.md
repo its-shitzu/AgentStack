@@ -1,6 +1,14 @@
 # AgentStack
 
+[![Built with Claude Code](https://img.shields.io/badge/Built%20with-Claude%20Code-d97757?logo=anthropic&logoColor=white)](https://claude.com/claude-code)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
+[![Live demo](https://img.shields.io/badge/demo-live-brightgreen)](https://agent-stack-smoky.vercel.app)
+
 The only SaaS boilerplate designed to be extended by AI agents, not just cloned. Auth, billing, and a multi-tenant dashboard ship out of the box — plus three ready-to-use Claude Code skills that let an agent add features for you, in your codebase's own style.
+
+**[Live demo →](https://agent-stack-smoky.vercel.app)**
+
+![AgentStack dashboard](./docs/screenshot-dashboard.png)
 
 ## Stack
 
@@ -9,7 +17,7 @@ Next.js 15 (App Router) · TypeScript · Tailwind CSS · Shadcn UI · Drizzle OR
 ## Setup (5 minutes)
 
 ```bash
-git clone <your-fork-url> agentstack
+git clone https://github.com/its-shitzu/AgentStack.git agentstack
 cd agentstack
 pnpm install
 cp .env.example .env.local   # fill in DATABASE_URL, BETTER_AUTH_SECRET, etc.
