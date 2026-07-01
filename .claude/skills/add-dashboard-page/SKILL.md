@@ -11,7 +11,7 @@ Adds a new route inside the `(dashboard)` route group, reusing the existing layo
 
 - `src/app/(dashboard)/layout.tsx` — the shared layout (auth guard via `getCurrentUser`, `Sidebar` + `Topbar`). New pages do NOT need to repeat this — they automatically inherit it by living under `(dashboard)/`.
 - `src/app/(dashboard)/dashboard/page.tsx` — canonical example of a server component page: heading + description block, then a grid of `Card`s.
-- `src/app/(dashboard)/settings/organization/page.tsx` — example of a page that fetches data server-side with Drizzle, scoped by `requireOrganization()`.
+- `src/app/(dashboard)/dashboard/settings/organization/page.tsx` — example of a page that fetches data server-side with Drizzle, scoped by `requireOrganization()`.
 - `src/components/dashboard/nav-items.ts` — sidebar registry.
 
 ## Steps
