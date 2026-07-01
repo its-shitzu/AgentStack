@@ -10,6 +10,19 @@ The only SaaS boilerplate designed to be extended by AI agents, not just cloned.
 
 ![AgentStack dashboard](./docs/screenshot-dashboard.png)
 
+## How this compares
+
+Boilerplates like [ShipFast](https://shipfa.st) or [Supastarter](https://supastarter.dev) are solid choices if you want the widest feature set out of the box and plan to build the rest by hand. AgentStack trades some of that breadth for a narrower, deliberate bet: the repo is structured and documented (`AGENTS.md`, `.claude/skills/`) specifically so an agent can extend it correctly without you re-explaining your conventions every session.
+
+| | AgentStack | Typical boilerplate |
+|---|---|---|
+| Auth, billing, dashboard | ✅ | ✅ |
+| Convention doc for AI agents (`AGENTS.md`) | ✅ | ❌ (or informal) |
+| Packaged agent skills to generate new features | ✅ (3 Claude Code skills) | ❌ |
+| Optimized for | Being extended by an agent | Being cloned and hand-edited |
+
+If you're not using Claude Code (or a similar agent) day-to-day, a broader boilerplate probably serves you better. If you are, the skills are the reason to pick this one.
+
 ## Stack
 
 Next.js 15 (App Router) · TypeScript · Tailwind CSS · Shadcn UI · Drizzle ORM · PostgreSQL (Neon-compatible) · Better Auth (email/password + Google OAuth) · Stripe (subscriptions + customer portal + webhooks) · React Email + Resend.
