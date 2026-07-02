@@ -8,7 +8,9 @@ The only SaaS boilerplate designed to be extended by AI agents, not just cloned.
 
 **[Live demo →](https://agent-stack-smoky.vercel.app)**
 
-![AgentStack dashboard](./docs/screenshot-dashboard.png)
+One prompt to `add-crud-feature`, and a full CRUD resource (DB table, server actions, dashboard page, table + form) shows up in the sidebar:
+
+![AgentStack: adding a resource with the add-crud-feature skill](./docs/demo.gif)
 
 ## How this compares
 
