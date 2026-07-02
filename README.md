@@ -93,6 +93,8 @@ export async function createInvoice(input: z.infer<typeof invoiceInputSchema>) {
 
 The table, actions, dashboard page, table/form UI, and sidebar entry it produced are live in this repo: [`src/db/schema/invoices.ts`](./src/db/schema/invoices.ts), [`src/app/(dashboard)/dashboard/invoices/`](./src/app/(dashboard)/dashboard/invoices/), [`src/components/invoices/`](./src/components/invoices/).
 
+**Live proof, not just this one example:** the Invoices, Clients, and Tasks pages in the [live demo](https://agent-stack-smoky.vercel.app) (sign up to see them in the sidebar) were all generated the same way, from a one-sentence prompt each — nothing hand-written.
+
 ### `add-dashboard-page`
 
 > "Add an Analytics page to the dashboard."
