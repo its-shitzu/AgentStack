@@ -1,5 +1,5 @@
 import type { LucideIcon } from "lucide-react";
-import { LayoutDashboard, Settings, Building2, CreditCard, FileText, Users } from "lucide-react";
+import { LayoutDashboard, Settings, Building2, CreditCard, FileText, Users, ListTodo } from "lucide-react";
 
 export interface NavItem {
   title: string;
@@ -16,6 +16,7 @@ export const navItems: NavItem[] = [
   { title: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
   { title: "Invoices", href: "/dashboard/invoices", icon: FileText },
   { title: "Clients", href: "/dashboard/clients", icon: Users },
+  { title: "Tasks", href: "/dashboard/tasks", icon: ListTodo },
   { title: "Organization", href: "/dashboard/settings/organization", icon: Building2 },
   { title: "Billing", href: "/dashboard/settings/billing", icon: CreditCard },
   { title: "Settings", href: "/dashboard/settings", icon: Settings },
